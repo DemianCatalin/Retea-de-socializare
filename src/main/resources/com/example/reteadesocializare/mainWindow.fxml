@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.reteadesocializare.MainWindowController">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Profil">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="avatar" fitHeight="167.0" fitWidth="193.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="lblemail" layoutX="14.0" layoutY="236.0" prefHeight="25.0" prefWidth="270.0" text="Label">
+                           <font>
+                              <Font name="Times New Roman" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblnume" layoutX="14.0" layoutY="198.0" prefHeight="25.0" prefWidth="270.0" text="Label">
+                           <font>
+                              <Font name="Times New Roman" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblnrprieteni" layoutX="207.0" layoutY="14.0" prefHeight="77.0" prefWidth="356.0" text="Label">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="logout" layoutX="14.0" layoutY="520.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="156.0" text="Log Out">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Prieteni">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableF" layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="600.0">
+                          <columns>
+                            <TableColumn fx:id="nameCol" prefWidth="200.0" text="Nume" />
+                            <TableColumn fx:id="emailCol" prefWidth="200.0" text="Email" />
+                              <TableColumn fx:id="dateCol" prefWidth="200.0" text="Prieteni din" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnDel" layoutX="219.0" layoutY="414.0" mnemonicParsing="false" onAction="#deleteFriendClicked" prefHeight="14.0" prefWidth="190.0" text="Sterge prietenie">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnDel1" layoutX="659.0" layoutY="196.0" mnemonicParsing="false" onAction="#messageClicked" prefHeight="14.0" prefWidth="190.0" text="Trimite mesaj">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Adauga prieteni">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableC" layoutX="27.0" layoutY="215.0" prefHeight="299.0" prefWidth="400.0">
+                           <columns>
+                              <TableColumn fx:id="nameCol1" prefWidth="200.0" text="Nume" />
+                              <TableColumn fx:id="dateCol1" prefWidth="200.0" text="Cerere primita in" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="acceptFriendClicked" layoutX="132.0" layoutY="514.0" mnemonicParsing="false" onAction="#acceptFriendClicked" prefHeight="14.0" prefWidth="190.0" text="Accepta cererea">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="searchT" layoutX="392.0" layoutY="16.0" prefHeight="37.0" prefWidth="209.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="262.0" layoutY="21.0" prefHeight="27.0" prefWidth="129.0" text="Adauga prieten">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="searchM" layoutX="391.0" layoutY="68.0" prefHeight="26.0" prefWidth="296.0" text="Label" textFill="#ff5858" visible="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableC2" layoutX="474.0" layoutY="215.0" prefHeight="299.0" prefWidth="400.0">
+                           <columns>
+                              <TableColumn fx:id="nameCol2" prefWidth="200.0" text="Nume" />
+                              <TableColumn fx:id="dateCol2" prefWidth="200.0" text="Cerere trimisa in" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="137.0" layoutY="168.0" text="Cereri primite">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="586.0" layoutY="168.0" text="Cereri trimise">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="deleteRequestClicked" layoutX="592.0" layoutY="514.0" mnemonicParsing="false" onAction="#deleteRequestClicked" prefHeight="14.0" prefWidth="190.0" text="Sterge cererea">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
